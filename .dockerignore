@@ -1,0 +1,48 @@
+# database directory
+db/*
+!db/src/
+!db/ormconfig.js
+!db/package.json
+!db/package-lock.json
+!db/tsconfig.build.json
+!db/tsconfig.json
+
+# utils directory
+utils/*
+!utils/src/
+!utils/package.json
+!utils/package-lock.json
+!utils/tsconfig.build.json
+!utils/tsconfig.json
+
+# configurations directory
+configurations/*
+!configurations/src/
+!configurations/package.json
+!configurations/package-lock.json
+!configurations/tsconfig.build.json
+!configurations/tsconfig.json
+
+# data directory
+data/*
+!data/src/
+!data/package.json
+!data/package-lock.json
+!data/tsconfig.build.json
+!data/tsconfig.json
+
+# main directory
+main/*
+!main/src/
+!main/package.json
+!main/package-lock.json
+!main/tsconfig.build.json
+!main/tsconfig.json
+
+# users directory
+users/*
+!users/src/
+!users/package.json
+!users/package-lock.json
+!users/tsconfig.build.json
+!users/tsconfig.json
