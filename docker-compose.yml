@@ -1,0 +1,39 @@
+version: '3.3'
+
+services: 
+    main:
+        build: 
+            context: .
+            dockerfile: ./main/Dockerfile
+        ports: 
+            - "3000:3000"
+    users:
+        build: 
+            context: .
+            dockerfile: ./users/Dockerfile
+        ports: 
+            - "3001:3001"
+    configurations:
+        build: 
+            context: .
+            dockerfile: ./configurations/Dockerfile
+        ports: 
+            - "3002:3002"
+    data:
+        build: 
+            context: .
+            dockerfile: ./data/Dockerfile
+        ports: 
+            - "3003:3003"
+    nginx:
+        image: nginx:latest
+        ports: 
+            - "80:80"
+        volumes: 
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on: 
+            - main
+            - users
+            - configurations
+            - data
+            
