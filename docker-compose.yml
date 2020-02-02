@@ -7,24 +7,32 @@ services:
             dockerfile: ./main/Dockerfile
         ports: 
             - "3000:3000"
+        volumes: 
+            - ./main:/opt/sigasac/main
     users:
         build: 
             context: .
             dockerfile: ./users/Dockerfile
         ports: 
             - "3001:3001"
+        volumes: 
+            - ./users:/opt/sigasac/users
     configurations:
         build: 
             context: .
             dockerfile: ./configurations/Dockerfile
         ports: 
             - "3002:3002"
+        volumes: 
+            - ./configurations:/opt/sigasac/configurations
     data:
         build: 
             context: .
             dockerfile: ./data/Dockerfile
         ports: 
             - "3003:3003"
+        volumes: 
+            - ./data:/opt/sigasac/data
     nginx:
         image: nginx:latest
         ports: 
