@@ -9,6 +9,8 @@ services:
             - "3000:3000"
         volumes: 
             - ./main:/opt/sigasac/main
+            - ./db:/opt/sigasac/db
+            - ./utils:/opt/sigasac/utils
     users:
         build: 
             context: .
@@ -17,6 +19,8 @@ services:
             - "3001:3001"
         volumes: 
             - ./users:/opt/sigasac/users
+            - ./db:/opt/sigasac/db
+            - ./utils:/opt/sigasac/utils
     configurations:
         build: 
             context: .
@@ -25,6 +29,8 @@ services:
             - "3002:3002"
         volumes: 
             - ./configurations:/opt/sigasac/configurations
+            - ./db:/opt/sigasac/db
+            - ./utils:/opt/sigasac/utils
     data:
         build: 
             context: .
@@ -33,6 +39,8 @@ services:
             - "3003:3003"
         volumes: 
             - ./data:/opt/sigasac/data
+            - ./db:/opt/sigasac/db
+            - ./utils:/opt/sigasac/utils
     nginx:
         image: nginx:latest
         ports: 
